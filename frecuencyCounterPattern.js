@@ -2,10 +2,11 @@ const validAnagram = (str1, str2) => {
   if (str1.length !== str2.length) return false;
 
   let obj1 = createObject(str1);
-  let obj2 = createObject(str2);
 
-  for (let c in obj1) {
-    if (obj2[c] === undefined || obj2[c] !== obj1[c]) return false;
+  for (let c of str2) {
+    if (!obj1[c]) return false;
+
+    obj1[c] -= 1;
   }
 
   return true;
