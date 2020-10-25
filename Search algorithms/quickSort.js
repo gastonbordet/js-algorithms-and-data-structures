@@ -4,12 +4,12 @@ function swap(arr, i, j) {
   arr[j] = aux;
 }
 
-function pivot(arr) {
+function pivot(arr, start = 0, end = arr.length - 1) {
   // Select our pivot, will be first element
-  const pivot = arr[0];
-  let index = 0;
+  const pivot = arr[start];
+  let index = start;
   // Loop all over array
-  for (let i = 1; i < arr.length; i++) {
+  for (let i = start + 1; i <= end; i++) {
     // check how many elements are smaller than the pivot
     if (pivot > arr[i]) {
       index++;
@@ -17,10 +17,25 @@ function pivot(arr) {
     }
   }
 
-  swap(arr, index, 0);
+  swap(arr, start, index);
   // return index
   return index;
 }
 
-console.log(pivot([5, 2, 1, 8, 4, 7, 6, 3])); // 4, index where pivot will be placed
-console.log(pivot([4, 8, 2, 1, 5, 7, 6, 3])); // 3, index where pivot will be placed
+function quicksort(arr, left = 0, right = arr.length - 1) {
+  if (left < right) {
+    let pivotIndex = pivot(arr, left, right);
+
+    // Sort left side
+    quicksort(arr, left, pivotIndex - 1);
+
+    // Sort right side
+    quicksort(arr, pivotIndex + 1, right);
+  }
+
+  return arr;
+}
+
+//console.log(quicksort([5, 2, 1, 8, 4, 7, 6, 3])); // 4, index where pivot will be placed
+console.log(quicksort([4, 8, 2, 1, 5, 7, 6, 3])); // 3, index where pivot will be placed
+console.log(quicksort([4, 6, 9, 1, 2, 5, 3])); // 3, index where pivot will be placed
