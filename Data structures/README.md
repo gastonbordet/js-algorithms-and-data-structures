@@ -17,3 +17,9 @@ Are good alternatives to arrays when you do insertion and deletion at the beginn
 # Doubly linked list
 
 The difference with singly linked lists is that every node has another pointer to the previous node. This makes them more efficients than singly linked lists in operations which involves searching nodes.
+
+# Stacks and Queues
+
+Stacks are LIFO data structures. LIFO means that the last element added into the stack will be the first element to be removed.
+
+Queues are FIFO data structures. Which means the first element added will be the first to be removed.
