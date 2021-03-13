@@ -23,3 +23,13 @@ The difference with singly linked lists is that every node has another pointer t
 Stacks are LIFO data structures. LIFO means that the last element added into the stack will be the first element to be removed.
 
 Queues are FIFO data structures. Which means the first element added will be the first to be removed.
+
+They both are good structures for insertion and removal of information, not so much for searching or access data
+
+# Trees
+
+Trees are data structures that consists of nodes in a parent / child relationship.
+
+# Binary trees
+
+Each parent node can have at most two children. Every node to the left of a parent node is always less thant the parent while every node to the right is always greater than the parent.
