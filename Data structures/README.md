@@ -33,3 +33,9 @@ Trees are data structures that consists of nodes in a parent / child relationshi
 # Binary trees
 
 Each parent node can have at most two children. Every node to the left of a parent node is always less thant the parent while every node to the right is always greater than the parent.
+
+# Tree traversal
+
+There's to main approches to traversing a tree, breath-first search (bfs) and depth-first search (dfs)
+
+Breath-first search visit every node on the same level
