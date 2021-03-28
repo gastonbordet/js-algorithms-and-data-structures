@@ -6,6 +6,13 @@ class Node {
   }
 }
 
+function traverse(node, data) {
+  data.push(node.value);
+
+  if (node.left) traverse(node.left, data);
+  if (node.right) traverse(node.right, data);
+}
+
 class BinarySearchTree {
   constructor() {
     this.root = null;
@@ -77,6 +84,15 @@ class BinarySearchTree {
 
     return values;
   }
+
+  dfsPreOrder() {
+    let data = [];
+
+    if (!this.root) return nodes;
+
+    traverse(this.root, data);
+    return data;
+  }
 }
 
 var tree = new BinarySearchTree();
@@ -87,4 +103,5 @@ tree.insert(3);
 tree.insert(8);
 tree.insert(20);
 
-console.log(tree.bfs()); // [10, 6, 15, 3, 8, 20]
+//console.log(tree.bfs()); // [10, 6, 15, 3, 8, 20]
+console.log(tree.dfsPreOrder()); // [10, 6, 3, 8, 15, 20]

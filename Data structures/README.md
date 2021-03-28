@@ -39,3 +39,5 @@ Each parent node can have at most two children. Every node to the left of a pare
 There's to main approches to traversing a tree, breath-first search (bfs) and depth-first search (dfs)
 
 Breath-first search visit every node on the same level
+
+Depth-first preorder search first hits the end of the tree and then check the rest of the nodes.
