@@ -6,13 +6,6 @@ class Node {
   }
 }
 
-function traverse(node, data) {
-  data.push(node.value);
-
-  if (node.left) traverse(node.left, data);
-  if (node.right) traverse(node.right, data);
-}
-
 class BinarySearchTree {
   constructor() {
     this.root = null;
@@ -90,6 +83,43 @@ class BinarySearchTree {
 
     if (!this.root) return nodes;
 
+    function traverse(node, data) {
+      data.push(node.value);
+
+      if (node.left) traverse(node.left, data);
+      if (node.right) traverse(node.right, data);
+    }
+
+    traverse(this.root, data);
+    return data;
+  }
+
+  dfsPostOrder() {
+    let data = [];
+
+    if (!this.root) return nodes;
+
+    function traverse(node, data) {
+      if (node.left) traverse(node.left, data);
+      if (node.right) traverse(node.right, data);
+      data.push(node.value);
+    }
+
+    traverse(this.root, data);
+    return data;
+  }
+
+  dfsInOrder() {
+    let data = [];
+
+    if (!this.root) return nodes;
+
+    function traverse(node, data) {
+      if (node.left) traverse(node.left, data);
+      data.push(node.value);
+      if (node.right) traverse(node.right, data);
+    }
+
     traverse(this.root, data);
     return data;
   }
@@ -104,4 +134,6 @@ tree.insert(8);
 tree.insert(20);
 
 //console.log(tree.bfs()); // [10, 6, 15, 3, 8, 20]
-console.log(tree.dfsPreOrder()); // [10, 6, 3, 8, 15, 20]
+//console.log(tree.dfsPreOrder()); // [10, 6, 3, 8, 15, 20]
+//console.log(tree.dfsPostOrder()); // [3, 8, 6, 20, 15, 10]
+console.log(tree.dfsInOrder()); // [3, 6, 8, 10, 15, 20]
