@@ -41,3 +41,7 @@ There's to main approches to traversing a tree, breath-first search (bfs) and de
 Breath-first search visit every node on the same level
 
 Depth-first preorder search first hits the end of the tree and then check the rest of the nodes.
+
+# Binary heaps
+
+A binary heap is a category of binary trees. Is very similar to a binary search tree but with some different rules. For example in a max binary heap, parent nodes are always larger than child nodes, while in a min binary heap parent nodes are always smaller than child nodes. Heaps are used to implement priority queues
