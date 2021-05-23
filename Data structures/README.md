@@ -45,3 +45,7 @@ Depth-first preorder search first hits the end of the tree and then check the re
 # Binary heaps
 
 A binary heap is a category of binary trees. Is very similar to a binary search tree but with some different rules. For example in a max binary heap, parent nodes are always larger than child nodes, while in a min binary heap parent nodes are always smaller than child nodes. Heaps are used to implement priority queues
+
+# Priority Queue
+
+Is a data structure where each element has a priority. Elements with higher priorities are served before elements with lower priorities.
